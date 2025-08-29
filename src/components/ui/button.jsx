@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Slot } from "@radix-ui/react-slot";
 import { cva } from "class-variance-authority";
-import { cn } from "@/lib/utils";
+import { cn } from "../../lib/format-utils";
 
 const buttonVariants = cva(
   "inline-flex cursor-pointer items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all " +
@@ -24,10 +24,14 @@ const buttonVariants = cva(
           "hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50",
         link: "text-primary underline-offset-4 hover:underline",
         // Pharmacy-specific variants
-        apply: "bg-status-delivered-foreground text-white shadow-lg hover:bg-status-delivered-foreground/90 focus:ring-2 focus:ring-status-delivered-foreground/30",
-        verification: "bg-status-verification-foreground text-white shadow-xs hover:bg-status-verification-foreground/90",
-        dispatch: "bg-status-dispatch text-status-dispatch-foreground shadow-xs hover:bg-status-dispatch/90",
-        store: "bg-status-store text-status-store-foreground shadow-xs hover:bg-status-store/90",
+        apply:
+          "bg-status-delivered-foreground text-white shadow-lg hover:bg-status-delivered-foreground/90 focus:ring-2 focus:ring-status-delivered-foreground/30",
+        verification:
+          "bg-status-verification-foreground text-white shadow-xs hover:bg-status-verification-foreground/90",
+        dispatch:
+          "bg-status-dispatch text-status-dispatch-foreground shadow-xs hover:bg-status-dispatch/90",
+        store:
+          "bg-status-store text-status-store-foreground shadow-xs hover:bg-status-store/90",
       },
       size: {
         default: "h-9 px-4 py-2 has-[>svg]:px-3",
