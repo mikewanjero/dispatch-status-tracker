@@ -8,12 +8,12 @@ import StatusRoute from "./routes/StatusRoute";
 function App() {
   return (
     <Router>
-      <div className="max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg mx-auto bg-white p-4 rounded-xl shadow-md">
+      <div className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg mx-auto bg-white p-4 rounded-xl shadow-md">
         <header className="p-2 bg-white shadow-md rounded-2xl mx-4">
           <h1 className="text-sm font-bold">Tracking Details</h1>
         </header>
 
-        <main className="p-4">
+        <main className="pt-4 px-4">
           <Routes>
             <Route path="/" element={<StatusRoute />} />
           </Routes>
