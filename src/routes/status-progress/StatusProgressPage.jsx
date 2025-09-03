@@ -6,7 +6,7 @@ import StatusActions from '../../components/status/StatusActions'
 
 export default function StatusProgressPage() {
   return (
-    <div className='max-w-md mx-auto p-4 space-y-6'>
+    <div className='max-w-md sm:max-w-sm mx-auto py-4 space-y-6'>
         <StatusTimeline />
         <StatusDetails />
         <StatusMessage />
