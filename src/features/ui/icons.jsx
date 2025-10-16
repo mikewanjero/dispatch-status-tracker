@@ -9,7 +9,7 @@ export const iconMap = {
 };
 
 export const statusColor = {
-    completed: 'text-green-600',
-    ongoing: 'text-red-400',
-    pending: 'text-black',
+    Completed: 'text-green-600',
+    Active: 'text-red-400',
+    Pending: 'text-black',
 }
