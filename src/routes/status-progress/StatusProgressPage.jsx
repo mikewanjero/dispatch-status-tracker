@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 import { useGetStatusTrackerQuery } from "@/features/status/statusprogressAPI";
 import StatusTimeline from "../../components/status/StatusTimeline";
 import StatusDetails from "../../components/status/StatusDetails";
@@ -9,7 +9,8 @@ import { Loader2 } from "lucide-react";
 import { toast } from "sonner";
 
 export default function StatusProgressPage() {
-  const { docNo } = useParams();
+  const [searchParams] = useSearchParams();
+  const docNo = searchParams.get('docNo');
 
   const { data, error, isLoading } = useGetStatusTrackerQuery(docNo, {
     skip: !docNo,
@@ -36,6 +37,14 @@ export default function StatusProgressPage() {
     return (
       <div className="text-center text-gray-500 mt-10">
         No document number provided.
+      </div>
+    );
+  }
+
+  if (!tracker && !isLoading && !error) {
+    return (
+      <div className="text-center text-gray-500 mt-10">
+        No tracking data found for document number <b>{docNo}</b>.
       </div>
     );
   }
